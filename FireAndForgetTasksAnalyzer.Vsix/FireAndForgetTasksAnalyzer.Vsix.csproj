@@ -91,6 +91,7 @@
     <ProjectReference Include="..\FireAndForgetTasksAnalyzer\FireAndForgetTasksAnalyzer.csproj">
       <Project>{65d94a80-e76f-48cd-8039-4d511598f8ca}</Project>
       <Name>FireAndForgetTasksAnalyzer</Name>
+      <AdditionalProperties>TargetFramework=netstandard2.0</AdditionalProperties>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
