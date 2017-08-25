@@ -1,0 +1,60 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Andrii snihyr</Authors>
+    <Company />
+    <NeutralLanguage>en</NeutralLanguage>
+    <Copyright>Andrii Snihyr 2017</Copyright>
+    <Description>Code analyzer that helps catching not awaited local variables</Description>
+    <PackageLicenseUrl>https://github.com/BerserkerDotNet/FireAndForgetTasksAnalyzer/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/BerserkerDotNet/FireAndForgetTasksAnalyzer</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/BerserkerDotNet/FireAndForgetTasksAnalyzer</RepositoryUrl>
+    <RepositoryType>GitHub repo</RepositoryType>
+    <PackageReleaseNotes />
+    <PackageTags>Code Analyzers,Task,Async,Await,Roslyn</PackageTags>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="tools\install.ps1" />
+    <None Remove="tools\uninstall.ps1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="tools\install.ps1">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tools\uninstall.ps1">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="1.1.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="2.3.1" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="2.3.1" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="2.3.1" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.Common" Version="2.3.1" />
+    <PackageReference Include="Microsoft.Composition" Version="1.0.31" />
+    <PackageReference Include="NuGet.CommandLine" Version="4.3.0" />
+    <PackageReference Include="System.Collections.Immutable" Version="1.3.1" />
+    <PackageReference Include="System.Reflection.Metadata" Version="1.4.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources.resx">
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
